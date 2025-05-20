@@ -18,7 +18,7 @@ COPY src/data/applicants_processed.parquet /app/src/data/applicants_processed.pa
 COPY src/ /app/src
 
 # Exponha a porta da aplicação
-EXPOSE 5000
+EXPOSE 3000
 
 # Comando para iniciar a aplicação
 CMD ["python", "src/main.py"]
