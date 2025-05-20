@@ -4,6 +4,8 @@ Sobre o Projeto
 
 Este projeto é uma API desenvolvida para melhorar o processo de recrutamento, utilizando machine learning para avaliar a compatibilidade de candidatos com vagas de trabalho específicas. O objetivo é analisar candidatos com base em suas qualificações e prever o sucesso em uma vaga determinada.
 
+Documentação da API: https://documenter.getpostman.com/view/13216885/2sB2qZEMzs
+
 Estrutura do Projeto
 
 /tech-challenge-v/
@@ -21,7 +23,7 @@ Estrutura do Projeto
 
 🛠️ Tecnologias Utilizadas
 
-Python 3.11
+Python 3.12
 
 Flask
 
