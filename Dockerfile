@@ -11,8 +11,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar o modelo e o parquet
-COPY src/modeltraining/model_rf.joblib /app/modeltraining/model_rf.joblib
-COPY src/data/applicants_processed.parquet /app/data/applicants_processed.parquet
+COPY src/modeltraining/model_rf.joblib /app/src/modeltraining/model_rf.joblib
+COPY src/data/applicants_processed.parquet /app/src/data/applicants_processed.parquet
 
 # Copia o código fonte
 COPY src/ /app/src
