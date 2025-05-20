@@ -9,7 +9,7 @@ from src.routes.prediction import create_prediction_route
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'static'))
 app.config['SECRET_KEY'] = 'asdf#FGSgvasgf$5$WGT'
 
-PARQUET_PATH = "./data/applicants_processed.parquet"
+PARQUET_PATH = "./src/data/applicants_processed.parquet"
 
 def load_parquet(file_path):
     """Carregar o DataFrame a partir do .parquet."""
