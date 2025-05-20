@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 
 # Carregar o modelo
-MODEL_PATH = "./modeltraining/model_rf.joblib"
+MODEL_PATH = "./src/modeltraining/model_rf.joblib"
 
 try:
     model = joblib.load(MODEL_PATH)
