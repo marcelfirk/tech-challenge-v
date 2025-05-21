@@ -1,27 +1,16 @@
-Tech Challenge V - Recruitment API
+Tech Challenge V - API Recrutamento Decision
 
-Sobre o Projeto
+SOBRE O PROJETO
 
-Este projeto é uma API desenvolvida para melhorar o processo de recrutamento, utilizando machine learning para avaliar a compatibilidade de candidatos com vagas de trabalho específicas. O objetivo é analisar candidatos com base em suas qualificações e prever o sucesso em uma vaga determinada.
+Este projeto é uma API desenvolvida para melhorar o processo de recrutamento da Decision, utilizando machine learning para avaliar a compatibilidade de candidatos com vagas de trabalho específicas. O objetivo é analisar candidatos com base em suas qualificações e prever o sucesso que ele teria no processo seletivo de uma vaga fornecida.
 
 Documentação da API: https://documenter.getpostman.com/view/13216885/2sB2qZEMzs
 
-Estrutura do Projeto
+ESTRUTURA
 
-/tech-challenge-v/
-├── data/
-│   └── applicants_processed.parquet      # Base de candidatos já processada
-├── modeltraining/
-│   └── model_rf.joblib                   # Modelo treinado em formato .joblib
-├── src/
-│   ├── main.py                          # Arquivo principal da aplicação
-│   └── routes/
-│       └── prediction.py                # Rota /predict para previsões
-├── Dockerfile                           # Dockerfile para build e execução da aplicação
-├── requirements.txt                    # Dependências da aplicação
-└── README.md                           # Documentação do projeto
+Na pasta data está localizado o arquivo applicants_processed.parquet, que contém a base de candidatos já processada (os dados foram fornecidos em formato .json pela Decision). A pasta modeltraining armazena o modelo de Machine Learning (Random Forest) treinado, salvo no arquivo model_rf.joblib. O código-fonte da aplicação está na pasta src, que contém o arquivo principal main.py e a subpasta routes, onde está implementada a rota /predict no arquivo prediction.py.
 
-🛠️ Tecnologias Utilizadas
+BIBLIOTECAS E SERVIÇOS UTILIZADOS
 
 Python 3.12
 
@@ -37,68 +26,6 @@ Docker
 
 Railway (Deploy)
 
-🏗️ Como Executar o Projeto
+EXECUÇÃO
 
-1. Clonar o Repositório:
-
-git clone https://github.com/marcelfirk/tech-challenge-v.git
-cd tech-challenge-v
-
-2. Criar e Ativar o Ambiente Virtual:
-
-python -m venv .venv
-source .venv/bin/activate  # Linux/Mac
-.\.venv\Scripts\activate  # Windows
-
-3. Instalar as Dependências:
-
-pip install -r requirements.txt
-
-4. Executar a Aplicação:
-
-python src/main.py
-
-A aplicação estará disponível em http://localhost:8080.
-
-🐳 Deploy com Docker
-
-1. Build da Imagem:
-
-docker build -t tech-challenge-v .
-
-2. Executar o Container:
-
-docker run -p 8080:8080 tech-challenge-v
-
-📦 Deploy no Railway
-
-Acesse Railway e crie um novo projeto.
-
-Conecte o repositório do GitHub.
-
-Defina o comando de execução como:
-
-python src/main.py
-
-Acompanhe os logs para garantir que a aplicação está rodando corretamente.
-
-📌 Rotas da API
-
-GET / - Verifica se a API está ativa.
-
-POST /predict - Recebe os dados do candidato e retorna a previsão de compatibilidade com a vaga.
-
-Exemplo de requisição:
-
-{
-    "cv_pt": "Engenheiro de software com 5 anos de experiência...",
-    "app_prof_conhecimentos_tecnicos": "Python, Flask, Docker",
-    "app_form_nivel_academico": "Superior Completo",
-    "app_form_nivel_ingles": "Avançado"
-}
-
-✅ Considerações Finais
-
-Esta API foi desenvolvida como parte do Tech Challenge V, utilizando machine learning para análise de perfis de candidatos.
-
-O deploy foi realizado no Railway, permitindo testes e acesso remoto à API.
+O deploy foi realizado no Railway, permitindo testes e acesso remoto à API. Para acessar a API, as requisições devem ser feitas à URL https://tech-challenge-v-production.up.railway.app/predict sendo passado no corpo da requisição a vaga de interesse no formato .json com as informações necessárias. Um exemplo de execução está presente na documentação da API: https://documenter.getpostman.com/view/13216885/2sB2qZEMzs
